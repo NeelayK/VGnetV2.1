@@ -149,8 +149,8 @@ nav ul li {
 .dropdown:not(:hover) .dropdown-menu {
     visibility: hidden;
     opacity: 0;
-    transition-duration: 1s;
-    transition-delay: 1s;  
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;  
 }
 
 /* Hero Section */
@@ -560,3 +560,121 @@ flex-direction:column;
 }
 
 
+
+/* Team Page */
+
+
+.team-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+
+.team-content {
+    display: flex;
+    align-items: center;
+    padding: 0 5rem 0 10rem;
+    width: 100%;
+}
+
+.text {
+    padding: 0 4rem;
+}
+
+.role {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.text h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+.pi-image {
+    min-width: 30%;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.16);
+    height: auto;
+    border-radius: 10px;
+}
+/* Other Members */
+.team-category {
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row; /* Change to column to stack team members */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 8%;
+    background-color: var(--primary-bg);
+    
+}
+
+/* Ensure a fixed width while keeping responsiveness */
+.team-member {
+    min-width: 500px;
+    width: 550px;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    padding:3rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-member:nth-child(2n){
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* Text Section */
+.team-text {
+    flex: 1; /* Allows text to take up available space */
+    min-width: 250px; /* Prevents text from shrinking too much */
+    align-self: center;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* Heading Styles */
+.team-text h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.team-text h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.team-text p {
+    padding-top: 0.25rem;
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+/* Image Styling */
+.team-member img {
+    width: 200px; /* Fixed image size */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.326);
+}
