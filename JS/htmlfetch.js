@@ -36,6 +36,14 @@ function loadPage(page) {
             if (document.querySelector(".publications")) {
                 fetchPublications();
             }
+
+            if (document.querySelector(".projects")) {
+                fetchProjects();
+            }
+
+            if (document.querySelector(".collabs")) {
+                fetchCollab();
+            }
             
             handleScroll();
         })
