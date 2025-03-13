@@ -6,12 +6,9 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-
 SUPABASE_URL = "https://prfkhjuujnheztwhwmcd.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByZmtoanV1am5oZXp0d2h3bWNkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE4MDk2NjIsImV4cCI6MjA1NzM4NTY2Mn0.j92nEtB5mUORV5VlCpLsTbJNinSykjnpaX0R1cnZQXc"
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
-
-
 
 @app.route('/publications', methods=['GET'])
 def get_publications():
@@ -22,9 +19,20 @@ def get_publications():
         print(f"Error fetching data: {e}")  # More detailed error log
         return jsonify({"error": "Internal Server Error"}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route('/projects', methods=['GET'])
+def get_projects():
+    try:
+        response = supabase.table('projects').select('*').execute()
+        return jsonify(response.data)
+    except Exception as e:
+        print(f"Error fetching data: {e}")  # More detailed error log
+        return jsonify({"error": "Internal Server Error"}), 500
 
-
-
-
+@app.route('/collabs', methods=['GET'])
+def get_collabs():
+    try:
+        response = supabase.table('collabs').select('*').execute()
+        return jsonify(response.data)
+    except Exception as e:
+        print(f"Error fetching data: {e}")  # More detailed error log
+        return jsonify({"error": "Internal Server Error"}), 500
